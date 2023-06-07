@@ -71,6 +71,7 @@ button:focus-visible {
 form input,
 form label {
   font-size: 20px;
+  padding-left: 4px;
 }
 
 form label {
@@ -105,4 +106,51 @@ form label {
   display: flex;
   justify-content: space-between;
   flex: 2;
+}
+
+.error-message {
+  border: 1px solid tomato;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+form label {
+  margin-right: 10px;
+  flex: 1;
+}
+
+.input-wrap {
+  flex: 1;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#phone-input-1 {
+  width: 40px;
+}
+#phone-input-2 {
+  width: 40px;
+}
+#phone-input-3 {
+  width: 60px;
+}
+
+#phone-input-1,
+#phone-input-2,
+#phone-input-3 {
+  text-align: center;
+}
+
+#phone-input-wrap {
+  display: flex;
+  justify-content: space-between;
+  flex: 2;
+}
+
+.error-message {
+  border: 1px solid tomato;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }

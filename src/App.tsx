@@ -1,15 +1,15 @@
 import "./App.css";
-import { FunctionalForm } from "./FunctionalForm";
-import { ClassForm } from "./ClassForm";
+import { ClassApp } from "./ClassApp/ClassApp";
+import { FunctionalApp } from "./FunctionalApp/FunctionalApp";
 
 function App() {
   return (
     <>
       <div className="left">
-        <FunctionalForm />
+        <FunctionalApp />
       </div>
       <div className="right">
-        <ClassForm />
+        <ClassApp />
       </div>
     </>
   );

@@ -61,9 +61,12 @@ To get this project setup, you should:
 
 - [ ] Get your code to function EXACTLY like [This Site](https://react-form-example-1.web.app/)
 - [ ] Whether or not an input is valid should change as the input value changes
-- [ ] Under Input Errors should not show UNLESS the user has already tried submitting once
+- [ ] Under input errors should not show UNLESS the user has already tried submitting once
 - [ ] If a user tries to submit a form with bad inputs, an alert message will say "Bad Inputs" then the exact errors will pop up under the incorrect inputs
-- [ ] Keep all constants (variables that do not change over time) outside of components
-- [ ] Form must reset after submitting
+- [ ] When a user successfully submits the form, it should update the userInformation and show the user information in the ProfileInformation Component
+- [ ] Create a `FunctionalTextInput` component to clean up code
+- [ ] Create a `FunctionalPhoneInput` component to clean up code
+- [ ] Create a `ClassTextInput` component to clean up code
+- [ ] Create a `ClassPhoneInput` component to clean up code
 - [ ] Page must NOT reload after submitting
 - [ ] ClassApp Code and FunctionalApp Code should be treated as seperate apps as far as state goes

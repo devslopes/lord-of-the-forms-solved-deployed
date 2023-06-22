@@ -7,7 +7,9 @@ function App() {
   return (
     <>
       <div className="all-container">
-        <h1>Lord of the Forms</h1>
+        <u>
+          <h1>Lord of the Forms</h1>
+        </u>
         <h4>Your Journey to good form UI Starts Here</h4>
         <div className="forms-container">
           <div className="left">

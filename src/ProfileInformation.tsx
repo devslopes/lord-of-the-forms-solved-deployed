@@ -19,7 +19,9 @@ export const ProfileInformation = ({
   if (!userData) {
     return (
       <>
-        <h3>Your Submitted User Information</h3>
+        <u>
+          <h3>Your Submitted User Information</h3>
+        </u>
         <div className="user-info">
           <div>No information provided</div>
         </div>
@@ -29,7 +31,9 @@ export const ProfileInformation = ({
   const { email, firstName, lastName, phone, state } = userData;
   return (
     <>
-      <h3>Your Submitted User Information</h3>
+      <u>
+        <h3>Your Submitted User Information</h3>
+      </u>
       <div className="user-info">
         <InfoRow label="Email" value={email} />
         <InfoRow label="First Name" value={capitalize(firstName)} />

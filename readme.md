@@ -8,11 +8,11 @@ You work for a SAAS company in middle earth and your task is to build a form whe
 - Email
 - Phone Number (in a proper middle-earth format XX-XX-XX-X )
 
-For this assignment we want to a make an extremely user friendly UI.
+For this assignment we want to a make an extremely user friendly UI where we can accomplish the following things.
 
-- How do we make it as easy as possible to fill out the correct data?
-- How do we make things pretty?
-- How do we render errors to the user?
+- Making it as easy as possible to fill out the correct data
+- Everything should look pretty
+- Input Validation Errors are rendered to the user
 
 We are going to build out a form that's purpose is to gather and set the `userInformation` of the parent component.
 
@@ -68,10 +68,15 @@ To get this project setup, you should:
 ### Assignment Specific Requirements
 
 - [ ] Get your code to function EXACTLY like [This Site](https://react-form-example-1.web.app/)
-- [ ] Whether or not an input is valid should change as the input value changes
 - [ ] Under input errors should not show UNLESS the user has already tried submitting once
+- [ ] Errors should go away as soon as the field is fixed, not on submit
 - [ ] If a user tries to submit a form with bad inputs, an alert message will say "Bad Inputs" then the exact errors will pop up under the incorrect inputs
 - [ ] When a user successfully submits the form, it should update the userInformation and show the user information in the ProfileInformation Component
+- [ ] In middle earth, phone numbers are of the format `NN-NN-NN-N` where each `N` represents any digit 0-9
+- [ ] A User cannot type any non-numeric characters into a telephone input
+- [ ] A submitted city must
+  - [ ] Be in the list of `allCites` found in `all-cities.ts`
+  - [ ] Does NOT have to be the same case, if you type in a valid city with different typing, this should be a VALID input
 - [ ] Create a `FunctionalTextInput` component to clean up code
 - [ ] Create a `FunctionalPhoneInput` component to clean up code
 - [ ] Create a `ClassTextInput` component to clean up code

@@ -4,6 +4,7 @@ import { TextInput } from "../TextInput";
 import { ClassTelephoneInput, PhoneNumberState } from "./ClassTelephoneInput";
 import { UserInformation } from "../types";
 import { isCityValid } from "../utils/all-cities";
+import { isValidPhoneNumber } from "../validations";
 
 const firstNameErrorMessage = "First name must be at least 2 characters long";
 const lastNameErrorMessage = "Last name must be at least 2 characters long";
@@ -57,8 +58,7 @@ export class ClassForm extends Component<
     const isLastNameInputValid = lastNameInput.length >= 2;
     const isEmailInputValid = isEmailValid(emailInput);
     const isStateInputValid = isCityValid(cityInput);
-    const isPhoneNumberValid =
-      !isSubmitted || phoneNumberInput.join("").length === 10;
+    const isPhoneNumberValid = isValidPhoneNumber(phoneNumberInput.join(""));
 
     const onSubmit = () => {
       this.setState({ isSubmitted: true });
@@ -91,7 +91,9 @@ export class ClassForm extends Component<
           onSubmit();
         }}
       >
-        <h3>User Information Form</h3>
+        <u>
+          <h3>User Information Form</h3>
+        </u>
         <TextInput
           label="First Name"
           inputProps={{
@@ -138,6 +140,7 @@ export class ClassForm extends Component<
             onChange: (e) => {
               this.setState({ cityInput: e.target.value });
             },
+            list: "cities",
           }}
           errorMessage={stateErrorMessage}
           shouldShowError={isSubmitted && !isStateInputValid}

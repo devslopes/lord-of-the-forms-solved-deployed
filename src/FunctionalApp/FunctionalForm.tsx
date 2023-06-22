@@ -80,7 +80,9 @@ export const FunctionalForm = ({
         onSubmit();
       }}
     >
-      <h3>User Information Form</h3>
+      <u>
+        <h3>User Information Form</h3>
+      </u>
       <TextInput
         label="First Name"
         inputProps={{

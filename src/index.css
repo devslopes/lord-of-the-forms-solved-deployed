@@ -68,10 +68,74 @@ button:focus-visible {
   }
 }
 
-form input,
 form label {
   font-size: 20px;
   padding-left: 4px;
+  font-family: RingBearer;
+}
+
+form input {
+  font-size: 15px;
+  padding-left: 4px;
+  font-family: MorrisRoman;
+}
+
+form input:not([type="submit"]) {
+  width: 300px;
+}
+
+input[type="submit"] {
+  padding: 10px;
+}
+
+form label {
+  margin-right: 10px;
+  flex: 1;
+}
+
+.input-wrap {
+  flex: 1;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#phone-input-1 {
+  width: 30px;
+}
+#phone-input-2 {
+  width: 30px;
+}
+#phone-input-3 {
+  width: 30px;
+}
+#phone-input-4 {
+  width: 30px;
+}
+
+#phone-input-1,
+#phone-input-2,
+#phone-input-3,
+#phone-input-4 {
+  text-align: center;
+}
+
+#phone-input-wrap {
+  display: flex;
+  justify-content: space-between;
+  flex: 2;
+  width: 400px;
+}
+
+.error-message {
+  border: 1px solid black;
+  padding: 2px;
+  color: white;
+  font-family: MorrisRoman;
+  background-color: tomato;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 15px;
 }
 
 form label {
@@ -106,51 +170,4 @@ form label {
   display: flex;
   justify-content: space-between;
   flex: 2;
-}
-
-.error-message {
-  border: 1px solid tomato;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  font-size: 20px;
-}
-
-form label {
-  margin-right: 10px;
-  flex: 1;
-}
-
-.input-wrap {
-  flex: 1;
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: space-between;
-}
-
-#phone-input-1 {
-  width: 40px;
-}
-#phone-input-2 {
-  width: 40px;
-}
-#phone-input-3 {
-  width: 60px;
-}
-
-#phone-input-1,
-#phone-input-2,
-#phone-input-3 {
-  text-align: center;
-}
-
-#phone-input-wrap {
-  display: flex;
-  justify-content: space-between;
-  flex: 2;
-}
-
-.error-message {
-  border: 1px solid tomato;
-  border-radius: 5px;
-  margin-bottom: 10px;
 }

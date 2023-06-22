@@ -2,7 +2,8 @@ import { ChangeEventHandler, Component, createRef } from "react";
 import { isAllNumbers } from "../validations";
 import { ErrorMessage } from "../ErrorMessage";
 
-export type PhoneNumberState = [string, string, string];
+export type PhoneNumberState = [string, string, string, string];
+
 type PhoneNumberInputProps = {
   phoneNumberInput: PhoneNumberState;
   setPhoneNumberInput: (input: PhoneNumberState) => void;
@@ -14,18 +15,20 @@ export class ClassTelephoneInput extends Component<PhoneNumberInputProps> {
   phoneNumberInput0RefRef = createRef<HTMLInputElement>();
   phoneNumberInput1RefRef = createRef<HTMLInputElement>();
   phoneNumberInput2RefRef = createRef<HTMLInputElement>();
+  phoneNumberInput3RefRef = createRef<HTMLInputElement>();
 
   render() {
-    const maxLengths = [3, 3, 4];
+    const maxLengths = [2, 2, 2, 1];
 
     const phoneNumberRefs = [
       this.phoneNumberInput0RefRef,
       this.phoneNumberInput1RefRef,
       this.phoneNumberInput2RefRef,
+      this.phoneNumberInput3RefRef,
     ];
 
     const handlePhoneNumberInput =
-      (phoneNumberIndex: 0 | 1 | 2): ChangeEventHandler<HTMLInputElement> =>
+      (phoneNumberIndex: 0 | 1 | 2 | 3): ChangeEventHandler<HTMLInputElement> =>
       (e) => {
         const newValue = e.target.value;
         const nextRef = phoneNumberRefs[phoneNumberIndex + 1];
@@ -33,7 +36,7 @@ export class ClassTelephoneInput extends Component<PhoneNumberInputProps> {
 
         const maxLength = maxLengths[phoneNumberIndex];
         const shouldGotoNextFocus =
-          phoneNumberIndex < 2 && newValue.length === maxLength;
+          phoneNumberIndex < 3 && newValue.length === maxLength;
         const shouldGotoPrevFocus =
           phoneNumberIndex > 0 && newValue.length === 0;
 
@@ -67,7 +70,7 @@ export class ClassTelephoneInput extends Component<PhoneNumberInputProps> {
               ref={this.phoneNumberInput0RefRef}
               onChange={handlePhoneNumberInput(0)}
               value={this.props.phoneNumberInput[0]}
-              placeholder="555"
+              placeholder="55"
             />
             -
             <input
@@ -76,7 +79,7 @@ export class ClassTelephoneInput extends Component<PhoneNumberInputProps> {
               ref={this.phoneNumberInput1RefRef}
               onChange={handlePhoneNumberInput(1)}
               value={this.props.phoneNumberInput[1]}
-              placeholder="555"
+              placeholder="55"
             />
             -
             <input
@@ -85,7 +88,16 @@ export class ClassTelephoneInput extends Component<PhoneNumberInputProps> {
               ref={this.phoneNumberInput2RefRef}
               onChange={handlePhoneNumberInput(2)}
               value={this.props.phoneNumberInput[2]}
-              placeholder="5555"
+              placeholder="55"
+            />
+            -
+            <input
+              type="text"
+              id="phone-input-4"
+              ref={this.phoneNumberInput3RefRef}
+              onChange={handlePhoneNumberInput(3)}
+              value={this.props.phoneNumberInput[3]}
+              placeholder="5"
             />
           </div>
         </div>

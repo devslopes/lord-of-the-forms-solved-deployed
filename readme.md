@@ -1,6 +1,14 @@
-# User Information Form
+# Lord of the Forms
 
-In this assignment you will be buildling a form with a BEAUTIFUL UI. It's often extremely important that we build forms that have all the fancy bells and whistles that you see on nice websites. For example a good UI may address the following concerns.
+You work for a SAAS company in middle earth and your task is to build a form where you can submit your information about your:
+
+- First Name
+- Last Name
+- City
+- Email
+- Phone Number (in a proper middle-earth format XX-XX-XX-X )
+
+For this assignment we want to a make an extremely user friendly UI.
 
 - How do we make it as easy as possible to fill out the correct data?
 - How do we make things pretty?
@@ -41,18 +49,18 @@ To get this project setup, you should:
 
 - [ ] Format code with prettier
 - [ ] State should not be duplicated
-- [ ] Variables should be named logicially
-- [ ] No unneccessary console logs
+- [ ] Variables should be named logically
+- [ ] No unnecessary console logs
 - [ ] No commented out blocks of code (Code comments are fine)
 - [ ] Setup a github repository with your submission as the `main` branch, you will submit a link to this for grading (NOT A ZIP FILE)
 
 ### Typescript Specific Requirements
 
-- [ ] pass **ALL** typechecks
+- [ ] pass **ALL** type-checks
   - Check by running `npm run typecheck`
 - [ ] DON'T USE `any`.... OR ELSE
 - [ ] Keep your types clean and in a logical location
-- [ ] Prop Types for components should be colocated with their components
+- [ ] Prop Types for components should be collocated with their components
 - [ ] Shared types should live in a file that says `types` somewhere in it's name
   - [ ] example: `types.ts` should work fine
 - [ ] Unshared types should live in the component they are used in
@@ -69,4 +77,4 @@ To get this project setup, you should:
 - [ ] Create a `ClassTextInput` component to clean up code
 - [ ] Create a `ClassPhoneInput` component to clean up code
 - [ ] Page must NOT reload after submitting
-- [ ] ClassApp Code and FunctionalApp Code should be treated as seperate apps as far as state goes
+- [ ] ClassApp Code and FunctionalApp Code should be treated as separate apps as far as state goes

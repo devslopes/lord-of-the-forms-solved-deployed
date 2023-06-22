@@ -1,8 +1,9 @@
 import { Component } from "react";
-import { isEmailValid, isStateValid } from "../utils/validations";
+import { isEmailValid } from "../utils/validations";
 import { TextInput } from "../TextInput";
-import { ClassTelephoneInput } from "./ClassTelephoneInput";
+import { ClassTelephoneInput, PhoneNumberState } from "./ClassTelephoneInput";
 import { UserInformation } from "../types";
+import { isCityValid } from "../utils/all-cities";
 
 const firstNameErrorMessage = "First name must be at least 2 characters long";
 const lastNameErrorMessage = "Last name must be at least 2 characters long";
@@ -11,11 +12,11 @@ const stateErrorMessage = "State is Invalid";
 const phoneNumberErrorMessage = "Invalid Phone Number";
 
 type State = {
-  phoneNumberInput: [string, string, string];
+  phoneNumberInput: PhoneNumberState;
   firstNameInput: string;
   lastNameInput: string;
   emailInput: string;
-  stateInput: string;
+  cityInput: string;
   isSubmitted: boolean;
 };
 
@@ -24,11 +25,11 @@ export class ClassForm extends Component<
   State
 > {
   state: State = {
-    phoneNumberInput: ["", "", ""],
+    phoneNumberInput: ["", "", "", ""],
     firstNameInput: "",
     lastNameInput: "",
     emailInput: "",
-    stateInput: "",
+    cityInput: "",
     isSubmitted: false,
   };
 
@@ -38,8 +39,8 @@ export class ClassForm extends Component<
       firstNameInput: "",
       emailInput: "",
       lastNameInput: "",
-      phoneNumberInput: ["", "", ""],
-      stateInput: "",
+      phoneNumberInput: ["", "", "", ""],
+      cityInput: "",
     });
   };
   render() {
@@ -49,13 +50,13 @@ export class ClassForm extends Component<
       emailInput,
       lastNameInput,
       phoneNumberInput,
-      stateInput,
+      cityInput,
     } = this.state;
 
     const isFirstNameInputValid = firstNameInput.length >= 2;
-    const isLastNameinputValid = lastNameInput.length >= 2;
+    const isLastNameInputValid = lastNameInput.length >= 2;
     const isEmailInputValid = isEmailValid(emailInput);
-    const isStateInputValid = isStateValid(stateInput);
+    const isStateInputValid = isCityValid(cityInput);
     const isPhoneNumberValid =
       !isSubmitted || phoneNumberInput.join("").length === 10;
 
@@ -64,7 +65,7 @@ export class ClassForm extends Component<
       if (
         ![
           isFirstNameInputValid,
-          isLastNameinputValid,
+          isLastNameInputValid,
           isEmailInputValid,
           isStateInputValid,
           isPhoneNumberValid,
@@ -78,7 +79,7 @@ export class ClassForm extends Component<
         firstName: firstNameInput,
         lastName: lastNameInput,
         phone: phoneNumberInput.join(""),
-        state: stateInput,
+        state: cityInput,
       });
       this.reset();
     };
@@ -94,7 +95,7 @@ export class ClassForm extends Component<
         <TextInput
           label="First Name"
           inputProps={{
-            placeholder: "Jon",
+            placeholder: "Bilbo",
             value: firstNameInput,
             onChange: (e) => {
               this.setState({ firstNameInput: e.target.value });
@@ -107,20 +108,20 @@ export class ClassForm extends Component<
         <TextInput
           label="Last Name"
           inputProps={{
-            placeholder: "Higger",
+            placeholder: "Baggins",
             value: lastNameInput,
             onChange: (e) => {
               this.setState({ lastNameInput: e.target.value });
             },
           }}
-          shouldShowError={isSubmitted && !isLastNameinputValid}
+          shouldShowError={isSubmitted && !isLastNameInputValid}
           errorMessage={lastNameErrorMessage}
         />
 
         <TextInput
           label="Email"
           inputProps={{
-            placeholder: "jon@jon.com",
+            placeholder: "bilbo@hobbiton-adventures.com",
             value: emailInput,
             onChange: (e) => {
               this.setState({ emailInput: e.target.value });
@@ -132,15 +133,15 @@ export class ClassForm extends Component<
 
         <TextInput
           inputProps={{
-            placeholder: "State",
-            value: stateInput,
+            placeholder: "Hobbiton",
+            value: cityInput,
             onChange: (e) => {
-              this.setState({ stateInput: e.target.value });
+              this.setState({ cityInput: e.target.value });
             },
           }}
           errorMessage={stateErrorMessage}
           shouldShowError={isSubmitted && !isStateInputValid}
-          label="State"
+          label="City"
         />
         <ClassTelephoneInput
           errorMessage={phoneNumberErrorMessage}

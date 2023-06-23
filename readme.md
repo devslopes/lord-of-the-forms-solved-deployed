@@ -67,7 +67,7 @@ To get this project setup, you should:
 
 ### Assignment Specific Requirements
 
-- [ ] Get your code to function EXACTLY like [This Site](https://react-form-example-1.web.app/)
+- [ ] Get your code to function EXACTLY like [This Site](https://lord-of-the-forms.vercel.app/)
 - [ ] Under input errors should not show UNLESS the user has already tried submitting once
 - [ ] Errors should go away as soon as the field is fixed, not on submit
 - [ ] If a user tries to submit a form with bad inputs, an alert message will say "Bad Inputs" then the exact errors will pop up under the incorrect inputs

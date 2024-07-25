@@ -1,13 +1,15 @@
 import { Component } from "react";
-import { isEmailValid } from "../utils/validations";
+import { isNameValid, isEmailValid } from "../utils/validations";
 import { TextInput } from "../TextInput";
 import { ClassTelephoneInput, PhoneNumberState } from "./ClassTelephoneInput";
 import { UserInformation } from "../types";
 import { isCityValid } from "../utils/all-cities";
 import { isValidPhoneNumber } from "../validations";
 
-const firstNameErrorMessage = "First name must be at least 2 characters long";
-const lastNameErrorMessage = "Last name must be at least 2 characters long";
+const firstNameErrorMessage =
+  "First name must be at least 2 characters long and can only contain letters";
+const lastNameErrorMessage =
+  "Last name must be at least 2 characters long and can only contain letters";
 const emailErrorMessage = "Email is Invalid";
 const stateErrorMessage = "State is Invalid";
 const phoneNumberErrorMessage = "Invalid Phone Number";
@@ -54,8 +56,8 @@ export class ClassForm extends Component<
       cityInput,
     } = this.state;
 
-    const isFirstNameInputValid = firstNameInput.length >= 2;
-    const isLastNameInputValid = lastNameInput.length >= 2;
+    const isFirstNameInputValid = isNameValid(firstNameInput);
+    const isLastNameInputValid = isNameValid(lastNameInput);
     const isEmailInputValid = isEmailValid(emailInput);
     const isStateInputValid = isCityValid(cityInput);
     const isPhoneNumberValid = isValidPhoneNumber(phoneNumberInput.join(""));
